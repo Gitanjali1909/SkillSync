@@ -18,6 +18,6 @@ export async function GET(request: Request, { params }: { params: { level: strin
 	  ]
 	};
   
-	return new Response(JSON.stringify(quizData[level] || []), { status: 200 });
-  }
+	return new Response(JSON.stringify(quizData[level as keyof typeof quizData] || []), { status: 200 });
+ }
   
